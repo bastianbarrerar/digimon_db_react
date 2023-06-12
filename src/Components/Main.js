@@ -29,9 +29,9 @@ const Main = () => {
 
   return (
     <main>
-      <div id="main--logo">
+      {!cardState && <div id="main--logo">
         <img id="main--logo--img" src={DigiLogo} alt="logo" />
-      </div>
+      </div>}
       {/* dropdown select */}
       <form onSubmit={submit}>
         <select

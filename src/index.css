@@ -1,13 +1,130 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  color: #263238;
+  height: 100vh;
+}
+nav{
+    display: flex;
+    height: 60px;
+    background-color: #e19e20;
+}
+#nav--img{
+    height: 60%;
+    padding: 12px;
+    margin-right: auto;
+    margin-left: 10px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-right: 20px;
+  gap:20px;
+}
+nav li {
+  color:white;
+}
+main{
+  flex-grow: 1;
+}
+footer{
+  height: 100px;
+  background-color: #e19e20;
+}
+#footer--img{
+  height: 80%;
+  padding: 5px;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+  background-color: #e6f4f1;
+}
+#main--logo{
+  width: 450px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#main--logo--img{
+  height: 100%;
+}
+#main--select{
+  min-width:380px;
+  width:50vw;
+  margin-bottom:40px;
+  height: 40px;
+  border: none;
+  background-color: white;
+  text-indent: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+#main--buttons{
+  min-width: 330px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+#main--buttons-button{
+  width: 120px;
+  height: 35px;
+  border: none;
+  background-color: #2572a9;
+  color: white;
+  border-radius: 7px;
+  letter-spacing: .03em;
+}
+#main--buttons-button:hover{
+  background-color: #1e83cc;
+}
+#main--buttons-button:active{
+  background-color: #245f8a;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#card{
+  margin-top: 20px;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+}
+#card hr {
+  width: 100%;
+  border: 1px solid rgb(235, 235, 235);
+}
+#card--img{
+  height: 75%;  
+}
+#card--img--img{
+  height: 100%;
+}
+#card--name, #card--lvl{
+  height: 12.5%;
+  display: flex;
+  align-items: center;
+
 }

@@ -10,12 +10,14 @@ const Main = () => {
   const [cardName, setCardName] = React.useState(null);
   const [cardLvl, setCardLvl] = React.useState(null);
   const [cardState, setCardState] = React.useState(false);
+  const [randomNum, setRandomNum] = React.useState(0)
 
   React.useEffect(() => {
     axios.get("https://digimon-api.vercel.app/api/digimon").then((data) => {
       const digimons = data.data.map((item) => item.name);
       setData(data.data);
       setList(digimons);
+      setRandomNum(Math.floor(Math.random() * 50));
     });
   }, []);
 
@@ -27,11 +29,22 @@ const Main = () => {
     setCardState(true);
   };
 
+  const random = (event) =>{
+    event.preventDefault();
+    setRandomNum(Math.floor(Math.random()*list.length));
+    setCardImg(data[randomNum].img);
+    setCardName(data[randomNum].name);
+    setCardLvl(data[randomNum].level);
+    setCardState(true);
+  }
+
   return (
     <main>
-      {!cardState && <div id="main--logo">
-        <img id="main--logo--img" src={DigiLogo} alt="logo" />
-      </div>}
+      {!cardState && (
+        <div id="main--logo">
+          <img id="main--logo--img" src={DigiLogo} alt="logo" />
+        </div>
+      )}
       {/* dropdown select */}
       <form onSubmit={submit}>
         <select
@@ -48,8 +61,11 @@ const Main = () => {
         </select>
         {/* buttons */}
         <div id="main--buttons">
-          <button type="submit" id="main--buttons-button">
+          <button type="submit" className="main--buttons-button">
             Buscar
+          </button>
+          <button onClick={random} className="main--buttons-button">
+            Random
           </button>
         </div>
       </form>
@@ -57,7 +73,7 @@ const Main = () => {
       {cardState && (
         <div id="card">
           <div id="card--img">
-            <img id="card--img--img" src={cardImg} alt="digimon image" />
+            <img id="card--pic" src={cardImg} alt="digimon image" />
           </div>
           <hr />
           <div id="card--name">{cardName}</div>
